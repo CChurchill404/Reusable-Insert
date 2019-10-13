@@ -1,0 +1,9 @@
+<?php
+  class Dbh{
+      public $conn;
+      public function __construct(){
+          $this->conn = mysqli_connect("localhost", "root","","littlebuilderuserone");
+      }
+  }
+
+?>
