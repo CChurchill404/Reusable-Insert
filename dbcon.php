@@ -1,9 +1,13 @@
 <?php
-  class Dbh{
-      public $conn;
-      public function __construct(){
-          $this->conn = mysqli_connect("localhost", "root","","littlebuilderuserone");
-      }
-  }
+class Dbh($host, $dbuser, $dbpass, $dbname){
+    private $conn;
+    private $host;
+    private $dbuser;
+    private $dbpass;
+    private $dbname;
+    public function __construct(){
+        $this->conn = mysqli_connect("localhost", "root","","littlebuilderuserone");
+    }
+}
 
 ?>
