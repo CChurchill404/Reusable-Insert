@@ -6,13 +6,23 @@
 <body>
 
 <div style="background-color: #ff0000;">
-  <?php
-    // $users = new ViewUser();
-    // $users->setAllUsers();
-  ?>
 </div>
 <form name="newUser" action="user.php" method="POST">
   <table align="center">
+    <tr>
+      <td>User ID</td>
+      <?
+      //using the select_data method
+      
+        $myData = $selectData->select_data("required_table");
+      
+        foreach ($myData as $row) { ?>
+      
+        <label><?php echo $row['rowName'] ?></label>
+      
+    <?php } ?>
+    </tr>
+    
     <tr>
       <td>Enter Username</td>
       <td><input type="text" name="userName"></td>
