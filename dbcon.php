@@ -6,7 +6,7 @@ class Dbh($host, $dbuser, $dbpass, $dbname){
     private $dbpass;
     private $dbname;
     public function __construct(){
-        $this->conn = mysqli_connect("localhost", "root","","littlebuilderuserone");
+        $this->conn = mysqli_connect($host, $dbuser, $dbpass, $dbname);
     }
 }
 
