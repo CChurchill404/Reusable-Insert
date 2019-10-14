@@ -1,5 +1,5 @@
 <?php
-class Dbh($host, $dbuser, $dbpass, $dbname){
+class dbConn($host, $dbuser, $dbpass, $dbname){
     private $conn;
     private $host;
     private $dbuser;
