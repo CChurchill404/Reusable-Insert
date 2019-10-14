@@ -1,21 +1,9 @@
 <?php
 include "dbcon.php";
-  // class User extends Dbh{
-  //     protected function getAllUsers(){
-  //         $sqlUserSelect = "SELECT * FROM `userdetails`";
-  //
-  //         $result = $this->connect()->query($sqlUserSelect);
-  //         $numRows = $result->num_rows;
-  //         if($numRows > 0){
-  //           while($row = $result->fetch_assoc()){
-  //             $data[] = $row;
-  //           }
-  //           return $data;
-  //         }
-  //     }
-  // }
+ 
   class dataOperations extends Dbh
   {
+    //insert method 
         public function insert_data($table,$fields){
             $insertUserDataSQL = "";
             $insertUserDataSQL .="INSERT INTO ".$table;
@@ -26,8 +14,21 @@ include "dbcon.php";
               return true;
             }
         }
-    }
+    //select method
+      public function select_data($table){
+            $selectDataSQL = "SELECT * FROM" . $table;
+            $array = array();
+            $query = mysqli_query($this->conn, $selectDataSQL);
+            while ($row = mysql_fetch_assoc($query)) {
+                $array[] = $row;
+            }
+            return $array;
+      }
+  }
 
+  
+
+//using the insert method
     $insertUserData = new dataOperations;
     if(isset($_POST["submit"])){
       $myArray = array(
